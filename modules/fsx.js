@@ -1,26 +1,10 @@
 const fs = require("fs");
 const fsp = require("fs/promises");
 const path = require("path");
+const { FSX } = require("../contants");
 
-
-const SERVICE_NAMES = new Set([
-    "node_modules",
-    ".git",
-    ".idea",
-    ".vscode",
-    ".DS_Store",
-    "package.json",
-    "package-lock.json",
-    "yarn.lock",
-    "pnpm-lock.yaml",
-    ".env",
-    ".env.local",
-    ".env.production",
-    ".env.development",
-    ".env.domain",
-]);
-
-const ALLOWED_EXT = new Set([".txt", ".json", ".rtf"]);
+const SERVICE_NAMES = new Set(FSX.SERVICE_NAMES);
+const ALLOWED_EXT = new Set(FSX.ALLOWED_EXT);
 
 function projectRoot() {
     return process.cwd();

@@ -2,9 +2,10 @@
 const { loadData } = require("./modules/loadData");
 const { sortStringsIgnoreSpaces } = require("./modules/sortStrings");
 const fsx = require("./modules/fsx");
+const { API } = require("./contants");
 
 async function main() {
-    const url = "https://jsonplaceholder.typicode.com/users";
+    const url = API.JSONPLACEHOLDER_USERS;
 
     // 1) загрузка данных
     const state = loadData(url);
