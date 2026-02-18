@@ -1,15 +1,9 @@
 const bcrypt = require("bcrypt");
-
+const { BCRYPT } = require("../contants");
 
 console.log("Текущий режим приложения MODE =", process.env.MODE);
 
-const PASSWORDS = [
-    "pass_01", "pass_02", "pass_03", "pass_04", "pass_05",
-    "pass_06", "pass_07", "pass_08", "pass_09", "pass_10",
-    "pass_11", "pass_12", "pass_13",
-];
-
-const SALT_ROUNDS = 10;
+const { PASSWORDS, SALT_ROUNDS } = BCRYPT;
 
 function nowNs() {
     return process.hrtime.bigint();
